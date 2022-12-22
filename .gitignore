@@ -8,4 +8,5 @@ Journal
 random_number_generator
 shutil_intro
 webbrowser_intro
-
+.DS_Store
+__pychace__/
