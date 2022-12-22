@@ -4,9 +4,9 @@
 
 ## <u>Table of Contents</u>
 1. [Description](#Description)
-2. [Installation and Usage](#Installation and Usage)
-3. [Contributing](#Contributing and Future Plans for this Application)
-4. [Questions](#Authors)
+2. [Installation and Usage](#Installation-and-Usage)
+3. [Contributing](#Contributing-and-Future-Plans-for-this-Application)
+4. [Authors](#Authors)
 5. [License](#License)
 
 ## Description
