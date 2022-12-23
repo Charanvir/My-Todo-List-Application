@@ -13,6 +13,7 @@ edit_button = sg.Button("Edit")
 complete_button = sg.Button("Complete")
 
 exit_button = sg.Button("Exit")
+error_message = sg.Text("", key="error")
 
 layout = [
     # Row 1
@@ -22,7 +23,7 @@ layout = [
     # Row 3
     [list_box, edit_button, complete_button],
     # Exit Row
-    [exit_button]
+    [exit_button, error_message]
 ]
 
 window = sg.Window(
@@ -40,21 +41,29 @@ while True:
             todo_functions.write_todos(todos)
             window["todos"].update(values=todos)
         case "Edit":
-            todo_to_edit = values["todos"][0]
-            new_todo = values["todo"] + "\n"
+            try:
+                todo_to_edit = values["todos"][0]
+                new_todo = values["todo"] + "\n"
 
-            todos = todo_functions.get_todos()
-            index = todos.index(todo_to_edit)
-            todos[index] = new_todo
-            todo_functions.write_todos(todos)
-            window["todos"].update(values=todos)
+                todos = todo_functions.get_todos()
+                index = todos.index(todo_to_edit)
+                todos[index] = new_todo
+                todo_functions.write_todos(todos)
+                window["todos"].update(values=todos)
+                window["error"].update("")
+            except IndexError:
+                window["error"].update("Please select an item to edit")
         case "Complete":
-            todo_to_complete = values["todos"][0]
-            todos = todo_functions.get_todos()
-            todos.remove(todo_to_complete)
-            todo_functions.write_todos(todos)
-            window["todos"].update(values=todos)
-            window["todo"].update(value="")
+            try:
+                todo_to_complete = values["todos"][0]
+                todos = todo_functions.get_todos()
+                todos.remove(todo_to_complete)
+                todo_functions.write_todos(todos)
+                window["todos"].update(values=todos)
+                window["todo"].update(value="")
+                window["error"].update("")
+            except IndexError:
+                window["error"].update("Please select an item to complete")
         case "todos":
             window["todo"].update(value=values["todos"][0])
         case sg.WINDOW_CLOSED:
