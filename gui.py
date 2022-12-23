@@ -13,18 +13,20 @@ edit_button = sg.Button("Edit")
 
 exit_button = sg.Button("Exit")
 
+layout = [
+    # Row 1
+    [label],
+    # Row 2
+    [input_box, add_button],
+    # Row 3
+    [list_box, edit_button],
+    # Exit Row
+    [exit_button]
+]
+
 window = sg.Window(
     "My To-Do App",
-    layout=[
-        # Row 1
-        [label],
-        # Row 2
-        [input_box, add_button],
-        # Row 3
-        [list_box, edit_button],
-        # Exit Row
-        [exit_button]
-    ],
+    layout=layout,
     font=('Helvetica', 20)
 )
 while True:
@@ -50,5 +52,5 @@ while True:
         case sg.WINDOW_CLOSED:
             break
         case "Exit":
-            window.close()
             break
+window.close()
