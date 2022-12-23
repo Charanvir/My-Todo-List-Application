@@ -1,6 +1,8 @@
 import todo_functions
 import PySimpleGUI as sg
+import time
 
+clock = sg.Text("", key="clock")
 label = sg.Text("Type in a to-do")
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
 add_button = sg.Button("Add")
@@ -17,10 +19,12 @@ error_message = sg.Text("", key="error")
 
 layout = [
     # Row 1
-    [label],
+    [clock],
     # Row 2
-    [input_box, add_button],
+    [label],
     # Row 3
+    [input_box, add_button],
+    # Row 4
     [list_box, edit_button, complete_button],
     # Exit Row
     [exit_button, error_message]
@@ -32,14 +36,20 @@ window = sg.Window(
     font=('Helvetica', 20)
 )
 while True:
-    event, values = window.read()
+    event, values = window.read(timeout=500)
+    window["clock"].update(value=time.strftime("%b %d, %Y %H:%M:%S"))
     match event:
         case "Add":
-            todos = todo_functions.get_todos()
-            new_todo = values["todo"] + "\n"
-            todos.append(new_todo)
-            todo_functions.write_todos(todos)
-            window["todos"].update(values=todos)
+            if values["todo"] == "":
+                window["error"].update("Please enter an item to add")
+            else:
+                todos = todo_functions.get_todos()
+                new_todo = values["todo"] + "\n"
+                todos.append(new_todo)
+                todo_functions.write_todos(todos)
+                window["todos"].update(values=todos)
+                window["error"].update("")
+                window["todo"].update("")
         case "Edit":
             try:
                 todo_to_edit = values["todos"][0]

@@ -1,2 +1,4 @@
 Cook
 Clean
+Study
+Prepare
