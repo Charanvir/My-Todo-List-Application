@@ -2,6 +2,8 @@ import todo_functions
 import PySimpleGUI as sg
 import time
 
+sg.theme("DarkBlue13")
+
 clock = sg.Text("", key="clock")
 label = sg.Text("Type in a to-do")
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
