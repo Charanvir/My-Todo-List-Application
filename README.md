@@ -30,7 +30,7 @@ application use the time standard python module to display the date and time whe
 application displays and updates the time in real-time.
 
 The GUI application uses some additional libraries. It uses the os standard python module to create the .txt file on the
-first execution of the program. It also uses PySimpleGUI, which is a third party module, which is used to create the
+first execution of the program. It also uses PySimpleGUI, which is a third party module used to create the
 graphical user interface for users to interact with.
 
 ## Installation
