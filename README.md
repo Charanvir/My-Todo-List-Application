@@ -23,6 +23,11 @@ the items from the list. This functionality can be done using both versions of t
 command line tool, while Version 3 being the application via the Graphical User Interface (GUI). For both versions, the
 todos list is saved to a todos.txt file, which is created on first use, and updated on every use thereafter.
 
+One thing to note, the GUI application can be executed from the command line, and by running the standalone executable
+application. Both of these programs will have individual todos.txt files created. This means that the todos created and
+modified when the program is run from the command line will be different from the list created using the standalone
+application.
+
 ### Dependencies
 
 This application was made using Python and a number of third party and standard modules. Both versions of the
