@@ -1,8 +1,9 @@
 # Todo List Application
 
-![badmath](https://img.shields.io/badge/License-MIT-blue) ![badmath](https://img.shields.io/badge/Version-1.0-yellow) 
+![badmath](https://img.shields.io/badge/License-MIT-blue) ![badmath](https://img.shields.io/badge/Version-2.0-yellow)
 
 ## <u>Table of Contents</u>
+
 1. [Description](#Description)
 2. [Installation and Usage](#Installation-and-Usage)
 3. [Contributing](#Contributing-and-Future-Plans-for-this-Application)
@@ -34,7 +35,7 @@ This will run the command the prompts will be shown to the user.
 This a basic python command line application. If you would like to improve this project in any way or fashion, please
 email the lead developer of this project at: charanvir123@gmail.com. Include the repository which contains the updated
 code and let us know what changes have been made. We are always looking to improve this project and any help is
-appreciated. 
+appreciated.
 
 ## Authors
 
@@ -43,5 +44,6 @@ To view more projects visit my [Github](https://github.com/Charanvir) account.
 Direct any additional questions you have regarding this application to charanvir123@gmail.com
 
 ## License
+
 ***
 The following application is covered under the MIT License
