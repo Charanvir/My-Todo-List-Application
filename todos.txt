@@ -1,7 +1,2 @@
-Clean
 Cook
-Study
-Prepare
-Watch a Movie
-Eat Popcorn
-Watch udemy Course
+Clean
